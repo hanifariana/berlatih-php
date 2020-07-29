@@ -1,6 +1,16 @@
 <?php
 function tentukan_deret_aritmatika($arr) {
 // kode di sini
+$beda;
+for($i=0;$i<count($arr);$i++){
+    $beda = array($arr[$i+1]-$arr[$i]);
+    if($beda[$i]==$beda[$i+1]){
+        echo "true";
+    }
+    else{
+        echo "false";
+    }
+}
 }
 
 // TEST CASES
