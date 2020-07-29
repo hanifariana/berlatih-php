@@ -2,28 +2,42 @@
 
 function papan_catur($angka) {
 // tulis kode di sini
+$hasil= "";
 for($i=1;$i<=$angka;$i++){
     if($i%2!=0){
-        for($j=1;$j<=$i;$j++){
-            echo str_repeat("#",$angka);
+        for($j=1;$j<=$angka;$j++){
+            $hasil.="# ";
         }
-        for($k=1;$k<$i;$k++){
-            echo str_repeat(" ",$angka-1);
-        }
-        echo "<br>";
     }
     else{
-        for($k=1;$k<=$i;$k++){
-            echo str_repeat("",$angka);
+        for($j=1;$j<$angka;$j++){
+            $hasil.=" #";
         }
-        for($j=1;$j<=$i;$j++){
-            echo str_repeat("#",$angka-1);
-        }
-        echo "<br>";
-
     }
+    echo $hasil."<br>";
 }
+
 }
+
+$text = '';
+ // Jumlah Kotak
+ // Perulangan pembuatan kotak catur
+ for($n = 0; $n < 8; $n++) {
+  $text .= '<tr>';
+  for($m = 0; $m < 8; $m++) {
+   // Pemberian Warna
+   $warna = '';
+      if(($n % 2 == 0 && $m % 2 == 0) || ($n % 2 == 1 && $m % 2 == 1)) {
+          $warna = '#000';
+      }
+   else $warna = '#fff';
+      $text .= '<td width=30 height=30 bgcolor='.$warna.'></td>';
+  }
+  $text .= '</tr>';
+ }
+ // Tag Penutup Table
+ $text .= '</table>';
+ echo $text;
 
 // TEST CASES
 echo papan_catur(4) ;
