@@ -1,16 +1,14 @@
 <?php
 function tentukan_deret_aritmatika($arr) {
 // kode di sini
-$beda;
-for($i=0;$i<count($arr);$i++){
-    $beda = array($arr[$i+1]-$arr[$i]);
-    if($beda[$i]==$beda[$i+1]){
-        echo "true";
-    }
-    else{
-        echo "false";
+$beda = $arr[1]-$arr[0];
+for($i=0;$i<count($arr)-1;$i++){
+    $bd = $arr[$i+1]-$arr[$i];
+    if($bd!=$beda){
+        return "false<br>";
     }
 }
+return "true"."<br>";
 }
 
 // TEST CASES
