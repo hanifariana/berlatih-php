@@ -1,6 +1,13 @@
 <?php
 function ubah_huruf($string){
 //kode di sini
+$ascii= 0;
+$baru="";
+for($i=0;$i<strlen($string);$i++){
+    $ascii=ord($string[$i])+1;
+    $baru.=chr($ascii);
+}
+echo $baru."<br>";
 }
 
 // TEST CASES
